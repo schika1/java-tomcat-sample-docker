@@ -14,7 +14,7 @@ pipeline {
         }
         stage ("Deploying to Docker") {
             steps {
-                sh "docker build . -t tomcatserver"
+                sh "sudo docker build . -t tomcatserver"
             }
         }
     }
