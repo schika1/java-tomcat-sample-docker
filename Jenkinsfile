@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Building Application') {
             steps {
-                sh 'mvn -f java-tomcat-sample/pom.xml clean package'
+                sh 'mvn -f pom.xml clean package'
             }
             post {
                 success {
@@ -12,7 +12,7 @@ pipeline {
                 }
             }
         }
-        stage ("Deploying to container") {
+        stage ("Deploying to Docker") {
             steps {
                 sh "docker build . -t tomcatserver"
             }
