@@ -14,7 +14,7 @@ pipeline {
         }
         stage ("Deploying to Docker") {
             steps {
-                sh "sudo docker build . -t tomcatserver"
+                sh "docker build . -t tomcatserver:${env.BUILD_ID}"
             }
         }
     }
